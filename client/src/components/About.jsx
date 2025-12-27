@@ -27,9 +27,9 @@ const About = () => {
                 <div className="grid lg:grid-cols-2 gap-10 mt-10">
                     {/* Left Side - Description & Skills */}
                     <div className="bg-white/10 dark:bg-secondary/30 backdrop-blur-md rounded-xl p-8 border border-gray-200 dark:border-white/5 shadow-lg">
-                        <h3 className="text-2xl font-bold mb-4">Passionate Software Developer</h3>
+                        <h3 className="text-2xl font-bold mb-4">Software Developer</h3>
                         <p className="text-gray-600 dark:text-gray-400 mb-8 leading-relaxed">
-                            I'm a passionate Software Developer specializing in the MERN stack, currently exploring the exciting world of Artificial Intelligence. I love building interactive, scalable applications and solving real-world problems through code. Open to opportunities that challenge me to innovate and grow.
+                            Software Developer passionate about building scalable, user-focused applications and intelligent automation solutions. Currently working with AI-powered workflows, backend services, and platform integrations. Enjoys solving real-world problems through clean code and system design. Open to challenging roles that drive innovation and continuous growth.
                         </p>
 
                         <div className="space-y-6">

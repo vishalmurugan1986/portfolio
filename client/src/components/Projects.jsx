@@ -1,6 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { FaEye, FaCode } from 'react-icons/fa';
+import JSLib from '../assets/JSLib.jpeg';
+import APXV1 from '../assets/APXV1.jpeg';
+import ClipstreamAI from '../assets/ClipstreamAI.jpeg';
 
 const Projects = () => {
     const [projects, setProjects] = useState([]);
@@ -8,7 +11,7 @@ const Projects = () => {
     const [activeFilter, setActiveFilter] = useState('ALL');
     const [loading, setLoading] = useState(true);
 
-    const filters = ['ALL', 'FRONTEND', 'BACKEND', 'FULLSTACK', 'MOBILE'];
+    const filters = ['ALL', 'FRONTEND', 'BACKEND', 'FULLSTACK', 'ARTIFICIAL INTELLIGENCE'];
 
     useEffect(() => {
         // Mock data for now to match the reference style
@@ -16,32 +19,31 @@ const Projects = () => {
             {
                 _id: '1',
                 title: 'Prime Promise',
-                category: 'FULLSTACK',
-                image: 'https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2072&q=80',
+                category: 'FRONTEND',
+                image: JSLib,
                 description: 'A lightweight promise utility library for JavaScript with modern async/await features.',
                 tags: ['JavaScript', 'Promise', 'Async/Await'],
-                demoUrl: 'https://example.com',
-                codeUrl: 'https://github.com'
+                codeUrl: 'https://github.com/vishalmurugan1986/prime-promise.git'
             },
             {
                 _id: '2',
-                title: 'Social Dashboard',
-                category: 'FRONTEND',
-                image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2015&q=80',
-                description: 'A responsive dashboard for managing social media analytics and metrics.',
-                tags: ['React', 'Tailwind', 'Chart.js'],
-                demoUrl: 'https://example.com',
-                codeUrl: 'https://github.com'
+                title: 'APXV1 | Private Intelligence',
+                category: ['FULLSTACK', 'ARTIFICIAL INTELLIGENCE'],
+                image: APXV1,
+                description: 'APX V1 uses RAG technology. Answers are generated based on the provided context only.',
+                tags: ['Python', 'Llama 3.3 (70B)', 'Pinecone', 'FastEmbeb(ONNX)', 'Groq'],
+                demoUrl: 'https://apx-v1.vercel.app/',
+                codeUrl: 'https://github.com/vishalmurugan1986/APX-V1.git'
             },
             {
                 _id: '3',
-                title: 'Task API',
-                category: 'BACKEND',
-                image: 'https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
-                description: 'RESTful API for task management with authentication and rate limiting.',
-                tags: ['Node.js', 'Express', 'MongoDB'],
-                demoUrl: 'https://example.com',
-                codeUrl: 'https://github.com'
+                title: 'Clipstream AI',
+                category: ['FULLSTACK', 'ARTIFICIAL INTELLIGENCE'],
+                image: ClipstreamAI,
+                description: 'Event-driven video intelligence pipeline.',
+                tags: ['Python', 'RabbitMQ', 'Groq(Llama 3 + Whisper)'],
+                demoUrl: 'https://project-clipstreamai.web.app/',
+                codeUrl: 'https://github.com/vishalmurugan1986/project-clipstreamAI.git'
             }
         ];
         setProjects(mockProjects);
@@ -54,7 +56,11 @@ const Projects = () => {
         if (category === 'ALL') {
             setFilteredProjects(projects);
         } else {
-            setFilteredProjects(projects.filter(project => project.category === category));
+            setFilteredProjects(projects.filter(project =>
+                Array.isArray(project.category)
+                    ? project.category.includes(category)
+                    : project.category === category
+            ));
         }
     };
 

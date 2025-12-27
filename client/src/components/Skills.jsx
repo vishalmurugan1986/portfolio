@@ -28,14 +28,6 @@ const Skills = () => {
             ]
         },
         {
-            title: 'FrameWorks & Libraries',
-            skills: [
-                { name: 'Mongoose', level: '80%', icon: <SiMongoose className="text-red-600" /> },
-                { name: 'Axios', level: '85%', icon: <SiAxios className="text-purple-600" /> },
-                { name: 'React Router', level: '80%', icon: <SiReactrouter className="text-red-500" /> }
-            ]
-        },
-        {
             title: 'Databases & Cloud',
             skills: [
                 { name: 'MongoDB Atlas', level: '80%', icon: <SiMongodb className="text-green-500" /> },
